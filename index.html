@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Premium - Exclusive Fitness Experience</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts for Luxury Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --luxury-gold: #d4af37;
+            --dark-bg: #0b0b0b;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navbar Premium Custom */
+        .navbar-premium {
+            background: rgba(11, 11, 11, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand span {
+            color: var(--luxury-gold);
+        }
+        .nav-link {
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: #e0e0e0 !important;
+            transition: color 0.3s ease;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: var(--luxury-gold) !important;
+        }
+
+        /* Hero Section dengan Gradient Overlay Mewah */
+        .hero-premium {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(180deg, rgba(11,11,11,0.4) 0%, rgba(11,11,11,1) 100%), 
+                        url('./foto/homr.jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+        }
+        .hero-title {
+            font-weight: 800;
+            font-size: 3.8rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .hero-title span {
+            background: linear-gradient(45deg, #fff, var(--luxury-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Tombol Premium */
+        .btn-gold {
+            background: var(--luxury-gold);
+            color: #000;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 35px;
+            border-radius: 50px;
+            border: 2px solid var(--luxury-gold);
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background: transparent;
+            color: var(--luxury-gold);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Kartu Glassmorphism untuk Keunggulan */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.1);
+            border-color: var(--luxury-gold);
+        }
+        
+        /* Gaya Teks di Dalam Kartu */
+        .card-desc-text {
+            color: #e0e0e0 !important;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--luxury-gold);
+            font-size: 1.8rem;
+        }
+
+        /* Video Section */
+        .video-container {
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+        
+        /* Teks deskripsi umum agar cerah putih kontras */
+        .luxury-text-p {
+            color: #f5f5f5 !important;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR (Hyperlink Wajib) -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 tracking-tight" href="index.html">FITLIFE<span>.PREMIUM</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto gap-3">
+                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link" href="about.html">Tentang Kami</a>
+                    <a class="nav-link" href="packages.html">Paket & Layanan</a>
+                    <a class="nav-link" href="reservation.html">Reservasi</a>
+                    <a class="nav-link" href="./contact.html">Kontak & Tim</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-premium">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="text-uppercase fw-bold tracking-widest text-warning mb-3 d-inline-block" style="letter-spacing: 3px; font-size: 0.85rem;">Dapatkan Akses Eksklusif Kelas Dunia</span>
+                    <h1 class="hero-title mb-4">Ubah Fisikmu.<br>Kuasai <span>Potensimu.</span></h1>
+                    <p class="luxury-text-p col-md-9 mb-5 fs-5">Fasilitas kebugaran ultra-modern, panduan instruktur elit terakreditasi, dan ekosistem pelatihan personal yang dirancang khusus untuk Anda.</p>
+                    <a href="reservation.html" class="btn btn-gold btn-lg shadow">Mulai Reservasi Elit</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEKSI KEUNGGULAN (3 Kartu Berjejer Rapi ke Samping) -->
+    <section class="container py-5 my-5">
+        <div class="text-center mb-5">
+            <span class="text-uppercase fw-bold tracking-widest" style="font-size: 0.85rem; letter-spacing: 2px; color: var(--luxury-gold);">Mengapa Kami Berbeda</span>
+            <h2 class="fw-bold fs-1 mt-2">Standar Kemewahan Baru</h2>
+        </div>
+        
+        <!-- Grid Row Pengatur Layout -->
+        <div class="row g-4 justify-content-center">
+            <!-- Kartu 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card h-100">
+                    <div class="icon-box mb-4">🏆</div>
+                    <h4 class="fw-bold text-white m-0">Fasilitas Ultra-Modern</h4>
+                    <span class="card-desc-text">Lantai latihan eksklusif yang dilengkapi dengan jajaran mesin ergonomis berteknologi tinggi dari merek kebugaran papan atas dunia.</span>
+                </div>
+            </div>
+            <!-- Kartu 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card h-100">
+                    <div class="icon-box mb-4">👑</div>
+                    <h4 class="fw-bold text-white m-0">Elite Coaches</h4>
+                    <span class="card-desc-text">Dapatkan pendampingan personal dari instruktur bersertifikasi internasional yang fokus pada biomekanika tubuh dan nutrisi kustom Anda.</span>
+                </div>
+            </div>
+            <!-- Kartu 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="glass-card h-100">
+                    <div class="icon-box mb-4">⚡</div>
+                    <h4 class="fw-bold text-white m-0">Seamless Booking</h4>
+                    <span class="card-desc-text">Sistem aplikasi web instan tanpa antrean. Jadwalkan waktu kedatangan Anda, kelas private, hingga sesi sauna dalam satu sentuhan.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKSI PREVIEW VIDEO (Video Wajib) -->
+    <section class="py-5" style="background: #111;">
+        <div class="container py-4">
+            <div class="row justify-content-center align-items-center g-5">
+                <div class="col-lg-5">
+                    <span class="text-uppercase fw-bold tracking-widest" style="font-size: 0.75rem; letter-spacing: 2px; color: var(--luxury-gold);">Tur Virtual</span>
+                    <h2 class="fw-bold fs-1 mt-2 mb-4">Rasakan Atmosfer Kemewahannya</h2>
+                    <p class="luxury-text-p lh-lg mb-4">Intip sekilas kemegahan interior arsitektur industri modern, pencahayaan sinematik yang memicu fokus, dan ruang eksklusif yang kami sediakan untuk kenyamanan latihan terbaik Anda.</p>
+                </div>
+                <div class="col-lg-7">
+                    <!-- HTML5 Video Element -->
+                    <div class="ratio ratio-16x9 video-container overflow-hidden">
+                        <video controls poster="./foto/about.jpeggti">
+                            <!-- Link video diganti file lokal MP4 kelompokmu nantinya -->
+                            <source src="./foto/video.mp4" type="video/mp4">
+                            Browser kamu tidak mendukung pemutaran video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-5 mt-5" style="border-top: 1px solid var(--glass-border); background: #000;">
+        <div class="container text-center">
+            <p class="small mb-0" style="color: #aaaaaa !important;">&copy; 2026 FITLIFE.PREMIUM. Crafted for SI071 Final Project, Universitas Amikom Yogyakarta.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

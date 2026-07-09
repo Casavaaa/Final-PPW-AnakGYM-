@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - FitLife Premium</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --luxury-gold: #d4af37;
+            --dark-bg: #0b0b0b;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .navbar-brand { font-family: 'Montserrat', sans-serif; }
+        
+        .navbar-premium {
+            background: rgba(11, 11, 11, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 0;
+        }
+        .navbar-brand span { color: var(--luxury-gold); }
+        .nav-link {
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: #e0e0e0 !important;
+        }
+        .nav-link.active, .nav-link:hover { color: var(--luxury-gold) !important; }
+        
+        /* GAYA HERO HEADER PREMIUM & ULTRA MEWAH (ANTI-BORING) */
+        .page-header-premium {
+            position: relative;
+            padding: 100px 0;
+            margin-bottom: 40px;
+            /* FOTO BACKGROUND HEADER (Bisa kamu ubah ke lokal 'images/bg-header.jpg' jika perlu) */
+            background: linear-gradient(180deg, rgba(11, 11, 11, 0.5) 0%, rgba(11, 11, 11, 1) 100%), 
+                        url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1920') no-repeat center center/cover;
+        }
+        .gold-line {
+            width: 80px;
+            height: 3px;
+            background: var(--luxury-gold);
+            border-radius: 5px;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+        }
+
+        /* Kartu Kaca Elit */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 35px;
+            height: 100%;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--luxury-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+        .glass-card p, .glass-card ul {
+            color: #e0e0e0 !important;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .text-gold { color: var(--luxury-gold); }
+
+        /* GAYA TAMBAHAN KHUSUS MAPS AGAR MATCH DENGAN UTILITY GLASS-CARD */
+        .map-responsive {
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            height: 350px;
+        }
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            /* FILTER DIHAPUS AGAR WARNA MAPS KEMBALI NORMAL SEPERTI PADA UMUMNYA */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-premium sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 tracking-tight" href="index.html">FITLIFE<span>.PREMIUM</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto gap-3">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" href="about.html">Tentang Kami</a>
+                    <a class="nav-link" href="packages.html">Paket & Layanan</a>
+                    <a class="nav-link" href="reservation.html">Reservasi</a>
+                    <a class="nav-link" href="contact.html">Kontak & Tim</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MINI HERO HEADER SINEMATIK -->
+    <div class="page-header-premium text-center">
+        <div class="container position-relative" style="z-index: 2;">
+            <span class="text-uppercase fw-bold tracking-widest" style="font-size: 0.85rem; letter-spacing: 4px; color: var(--luxury-gold);">Warisan & Dedikasi</span>
+            <h1 class="fw-bold display-5 mt-2 text-white" style="letter-spacing: -0.5px;">Mengenal FitLife Premium</h1>
+            <div class="gold-line mx-auto mt-3"></div>
+        </div>
+    </div>
+
+    <!-- SEKSI VISUAL UTAMA & SEJARAH -->
+    <section class="container my-5">
+        <div class="row align-items-center g-5 mb-5">
+            <div class="col-lg-6">
+                <!-- Foto Gym Premium Kontras Tinggi -->
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800" class="img-fluid rounded-4 shadow-lg border" alt="Suasana Premium Gym" style="border-color: var(--glass-border) !important;">
+            </div>
+            <div class="col-lg-6">
+                <div class="glass-card">
+                    <h3 class="fw-bold mb-3 text-gold fs-4">Kisah Awal Kami</h3>
+                    <p class="mb-0">FitLife Premium didirikan dengan satu tujuan utama: menyediakan ekosistem kebugaran inklusif yang memadukan fasilitas kemewahan ultra-modern dengan sains olahraga demi kenyamanan optimal Anda. Kami believe bahwa ruang latihan yang dirancang dengan detail estetika tinggi mampu mendongkrak fokus mental dan konsistensi latihan ke level tertinggi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW KEDUA: VISI & MISI BERJEJER MODERN -->
+        <div class="row g-4 justify-content-center mb-5">
+            <!-- Card Visi -->
+            <div class="col-md-6">
+                <div class="glass-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="fs-3 me-3">🎯</div>
+                        <h4 class="fw-bold text-white m-0">Visi Utama</h4>
+                    </div>
+                    <p class="mb-0">Menjadi pelopor pusat kebugaran elit dunia yang menginspirasi gaya hidup aktif berkelanjutan, dengan mengintegrasikan kemewahan pelayanan hospitality dan modernisasi teknologi digital.</p>
+                </div>
+            </div>
+
+            <!-- Card Misi -->
+            <div class="col-md-6">
+                <div class="glass-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="fs-3 me-3">⚡</div>
+                        <h4 class="fw-bold text-white m-0">Misi Strategis</h4>
+                    </div>
+                    <ul class="ps-3 mb-0">
+                        <li class="mb-2">Menyediakan area latihan premium yang aman, privat, serta terjaga higienitasnya secara berkala.</li>
+                        <li class="mb-2">Menghadirkan program personal terukur berdasarkan biomekanika tubuh khusus untuk kebutuhan Anda.</li>
+                        <li class="mb-0">Menyederhanakan proses reservasi dan administrasi lewat integrasi teknologi sistem web lokal yang instan.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── FITUR LOKASI KLUB ELIT ─── -->
+        <div class="row">
+            <div class="col-12">
+                <div class="glass-card">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-5">
+                            <h3 class="fw-bold mb-2 text-gold fs-4">Lokasi Klub Elit Kami</h3>
+                            <p class="mb-4">Kunjungi markas FitLife Premium untuk memulai transformasi fisik Anda secara langsung dengan panduan para expert.</p>
+                            
+                            <div class="mb-3 d-flex align-items-start">
+                                <span class="me-3 fs-5">📍</span>
+                                <div>
+                                    <h6 class="fw-bold text-white mb-1">Alamat Utama:</h6>
+                                    <p class="small mb-0 opacity-75">Jl. Ring Road Utara, Condongcatur, Sleman, Yogyakarta (Dekat Kampus Universitas Amikom Yogyakarta).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="map-responsive">
+                                <!-- Google Maps Embed Link (Mengarah tepat ke Universitas Amikom Yogyakarta sebagai patokan) -->
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.284244249162!2d110.4061448!3d-7.7596541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a599bd3bdc4ef%3A0x6d17bbaf1450cc6!2sUniversitas%20Amikom%20Yogyakarta!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-5 mt-5" style="border-top: 1px solid var(--glass-border); background: #000;">
+        <div class="container text-center">
+            <p class="small mb-0" style="color: #aaaaaa !important;">&copy; 2026 FITLIFE.PREMIUM. Crafted for SI071 Final Project, Universitas Amikom Yogyakarta.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
