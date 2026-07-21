@@ -1,294 +1,317 @@
-<!DOCTYPE html> <!-- Mendeklarasikan tipe dokumen sebagai HTML5 -->
-<html lang="id"> <!-- Menentukan bahasa utama dokumen, yaitu Bahasa Indonesia ("id") -->
-<head> <!-- Bagian head yang berisi metadata, judul, dan link eksternal (CSS/Fonts) -->
-    <meta charset="UTF-8"> <!-- Menentukan pengodean karakter standar berupa UTF-8 agar mendukung semua simbol -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Membuat halaman menjadi responsif di semua ukuran layar (mobile-friendly) -->
-    <title>Paket & Layanan - FitLife Premium</title> <!-- Menentukan judul halaman yang muncul pada tab browser -->
-    
-    <!-- Bootstrap CSS -->
-    <!-- Menghubungkan framework Bootstrap 5 dari CDN untuk styling instan dan layout grid -->
+<!-- Menandakan bahwa dokumen ini menggunakan standar HTML5 terbaru -->
+<!DOCTYPE html>
+<!-- Membuka tag HTML dan mengatur bahasa utama halaman menggunakan Bahasa Indonesia (id) -->
+<html lang="id">
+<head>
+    <!-- Mengatur pengodean karakter standar global (UTF-8) agar teks/simbol terbaca dengan benar -->
+    <meta charset="UTF-8">
+    <!-- Mengatur viewport agar tampilan website otomatis responsif di HP, tablet, maupun laptop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Memberikan judul pada tab browser halaman web -->
+    <title>Paket & Layanan - FitLife Premium</title>
+    <!-- Memanggil framework CSS Bootstrap 5 via CDN untuk styling layout dan komponen instan -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <!-- Mengambil font 'Montserrat' dan 'Poppins' dari Google Fonts untuk tampilan tipografi yang modern -->
+    <!-- Mengambil font khusus (Montserrat dan Poppins) dari Google Fonts agar tipografi web terlihat elegan -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <style> /* Membuka blok internal CSS untuk custom styling khusus halaman ini */
-        :root { /* Menyimpan variabel warna global (CSS Variables) agar mudah digunakan kembali */
-            --luxury-gold: #d4af37; /* Variabel untuk warna emas mewah */
-            --dark-bg: #0b0b0b; /* Variabel untuk warna latar belakang hitam pekat */
-            --card-bg: rgba(255, 255, 255, 0.05); /* Variabel latar belakang kartu semi-transparan (efek glassmorphism) */
-            --glass-border: rgba(255, 255, 255, 0.15); /* Variabel untuk garis tepi semi-transparan */
+    <!-- Membuka blok internal CSS untuk memodifikasi atau menambah gaya visual kustom -->
+    <style>
+        /* :root digunakan untuk mendefinisikan variabel global CSS agar warna tema mudah diatur kembali */
+        :root {
+            --luxury-gold: #d4af37; /* Menyimpan variabel warna emas mewah */
+            --dark-bg: #0b0b0b; /* Menyimpan variabel warna latar belakang hitam pekat */
+            --card-bg: rgba(255, 255, 255, 0.05); /* Menyimpan warna putih transparan untuk efek kartu kaca */
+            --glass-border: rgba(255, 255, 255, 0.15); /* Menyimpan warna garis tepi semi transparan */
         }
-        body { /* Mengatur style dasar untuk seluruh tubuh dokumen */
-            font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins sebagai default text */
-            background-color: var(--dark-bg); /* Mengaplikasikan warna latar belakang gelap dari variabel */
-            color: #ffffff; /* Mengubah warna text utama menjadi putih */
-            overflow-x: hidden; /* Mencegah munculnya scrollbar horizontal yang mengganggu layout */
+        /* Mengatur properti global untuk seluruh elemen body halaman website */
+        body {
+            font-family: 'Poppins', sans-serif; /* Mengatur font standar teks utama menggunakan Poppins */
+            background-color: var(--dark-bg); /* Menerapkan warna latar belakang hitam dari variabel global */
+            color: #ffffff; /* Mengubah warna teks default menjadi putih */
+            overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan-kiri (menghindari layout bocor) */
         }
-        /* Menggunakan font Montserrat khusus untuk elemen judul dan nama brand agar terlihat tegas */
+        /* Mengatur font khusus judul (h1-h4) dan logo navigasi menggunakan font Montserrat */
         h1, h2, h3, h4, .navbar-brand { font-family: 'Montserrat', sans-serif; }
         
-        .navbar-premium { /* Kustomisasi bar navigasi bertema premium */
-            background: rgba(11, 11, 11, 0.95) !important; /* Warna hitam dengan transparansi 5% */
-            backdrop-filter: blur(15px); /* Memberikan efek blur pada latar belakang di belakang navbar (efek kaca) */
-            border-bottom: 1px solid var(--glass-border); /* Garis batas bawah tipis */
-            padding: 20px 0; /* Memberikan jarak vertikal di dalam navbar */
+        /* Mengatur gaya kustom untuk komponen menu navigasi (navbar) */
+        .navbar-premium {
+            background: rgba(11, 11, 11, 0.95) !important; /* Membuat latar belakang menu hitam transparan */
+            backdrop-filter: blur(15px); /* Memberikan efek blur/kaca buram (Glassmorphism) di belakang navbar */
+            border-bottom: 1px solid var(--glass-border); /* Memberikan garis pembatas tipis di bawah menu navigasi */
+            padding: 20px 0; /* Memberikan jarak vertikal (atas-bawah) sebesar 20 pixel di dalam navbar */
         }
-        .navbar-brand span { color: var(--luxury-gold); } /* Mewarnai teks ".PREMIUM" pada brand dengan warna emas */
-        
-        .nav-link { /* Mengatur tampilan menu tautan pada navbar */
-            font-weight: 500; /* Ketebalan font medium */
-            letter-spacing: 1px; /* Memberikan jarak antar huruf */
-            text-transform: uppercase; /* Mengubah teks menjadi huruf kapital semua */
-            font-size: 0.85rem; /* Ukuran font sedikit lebih kecil dari standar */
-            color: #e0e0e0 !important; /* Warna teks abu-abu terang */
-            transition: color 0.3s ease; /* Transisi halus selama 0.3 detik saat warna berubah */
+        /* Memberikan warna emas khusus pada teks spesifik di logo menu navigasi */
+        .navbar-brand span { color: var(--luxury-gold); }
+        /* Mengatur gaya visual untuk setiap teks link menu navigasi */
+        .nav-link {
+            font-weight: 500; /* Mengatur ketebalan huruf menu sebesar 500 (medium) */
+            letter-spacing: 1px; /* Memberikan jarak antar huruf sebesar 1 pixel agar rapi */
+            text-transform: uppercase; /* Mengubah semua huruf teks menu menjadi huruf kapital (besar) */
+            font-size: 0.85rem; /* Mengatur ukuran teks menu sedikit lebih kecil dari ukuran standar */
+            color: #e0e0e0 !important; /* Memaksa warna teks link menu menjadi abu-abu terang */
+            transition: color 0.3s ease; /* Memberikan efek transisi halus selama 0.3 detik saat warna berubah */
         }
-        /* Mengubah warna link menjadi emas saat aktif atau saat kursor diarahkan ke menu */
+        /* Mengubah warna teks link menu menjadi emas saat disentuh kursor (hover) atau saat aktif */
         .nav-link.active, .nav-link:hover { color: var(--luxury-gold) !important; }
+        /* Class utilitas instan untuk mengubah warna teks apa saja menjadi warna emas premium */
+        .text-gold { color: var(--luxury-gold); }
         
-        .text-gold { color: var(--luxury-gold); } /* Class pembantu untuk mengubah warna teks menjadi emas */
-        
-        .table-premium { /* Mengatur styling kustom tabel harga agar bertema gelap */
-            background-color: #161616 !important; /* Warna abu-abu sangat gelap untuk body tabel */
-            border: 1px solid var(--glass-border) !important; /* Garis tepi tipis transparan */
+        /* Mengatur gaya kustom untuk tabel daftar paket membership */
+        .table-premium {
+            background-color: #161616 !important; /* Mengubah latar belakang dasar tabel menjadi abu-abu sangat gelap */
+            border: 1px solid var(--glass-border) !important; /* Memberikan garis tepi luar tabel dengan warna semi-transparan */
         }
-        .table-premium th { /* Mengatur bagian kepala tabel (header) */
-            background-color: rgba(212, 175, 55, 0.2) !important; /* Latar belakang emas transparan */
-            color: var(--luxury-gold) !important; /* Warna teks kepala tabel emas */
-            border-bottom: 2px solid var(--glass-border) !important; /* Garis bawah header lebih tebal */
+        /* Mengatur gaya kustom untuk bagian kepala baris kolom tabel (heading) */
+        .table-premium th {
+            background-color: rgba(212, 175, 55, 0.2) !important; /* Memberikan warna latar belakang emas transparan pada header */
+            color: var(--luxury-gold) !important; /* Mengubah warna teks judul kolom menjadi emas */
+            border-bottom: 2px solid var(--glass-border) !important; /* Memberikan garis pembatas bawah tajam pada judul kolom */
         }
-        .table-premium td { /* Mengatur bagian sel data tabel */
-            border-bottom: 1px solid var(--glass-border) !important; /* Garis pemisah antar baris */
-            color: #ffffff !important; /* Teks data berwarna putih */
-            background-color: #161616 !important; /* Memastikan background sel konsisten */
+        /* Mengatur gaya kustom untuk isi sel data di dalam tabel */
+        .table-premium td {
+            border-bottom: 1px solid var(--glass-border) !important; /* Memberikan garis pembatas tipis di bawah setiap data baris */
+            color: #ffffff !important; /* Memaksa warna teks isi tabel menjadi putih bersih */
+            background-color: #161616 !important; /* Memastikan latar belakang data tetap gelap serasi */
         }
 
-        .glass-card { /* Kartu dengan gaya Glassmorphism (efek kaca modern) */
-            background: var(--card-bg); /* Latar belakang transparan tipis */
-            border: 1px solid var(--glass-border); /* Garis tepi transparan */
-            border-radius: 15px; /* Sudut kartu melengkung halus */
-            padding: 25px; /* Jarak ruang di dalam kartu */
-            height: 100%; /* Memaksa tinggi kartu memenuhi grid */
-            transition: transform 0.3s ease, border-color 0.3s ease; /* Efek transisi halus saat di-hover */
+        /* Mengatur gaya kustom berbentuk kartu transparan (Glassmorphism Card) untuk jadwal kelas */
+        .glass-card {
+            background: var(--card-bg); /* Menggunakan warna latar transparan tipis yang diatur di variabel root */
+            border: 1px solid var(--glass-border); /* Memberikan garis batas tipis transparan di sekeliling kartu */
+            border-radius: 15px; /* Membuat sudut-sudut kartu menjadi melengkung/membulat */
+            padding: 25px; /* Memberikan ruang udara/jarak di dalam kartu sebesar 25 pixel */
+            height: 100%; /* Memaksa tinggi kartu agar memenuhi tinggi kolom grid agar presisi tinggi rata */
+            transition: transform 0.3s ease, border-color 0.3s ease; /* Transisi halus efek animasi saat kursor menyentuh kartu */
         }
-        .glass-card:hover { /* Efek interaktif saat kursor mouse berada di atas kartu */
-            transform: translateY(-5px); /* Kartu sedikit bergeser ke atas menciptakan efek melayang */
-            border-color: var(--luxury-gold); /* Warna border berubah menjadi emas */
+        /* Efek interaktif ketika kursor mouse diletakkan di atas elemen kartu jadwal kelas */
+        .glass-card:hover {
+            transform: translateY(-5px); /* Memberikan animasi kartu sedikit terangkat ke atas sejauh 5 pixel */
+            border-color: var(--luxury-gold); /* Mengubah warna garis pembatas kartu menjadi emas menyala */
         }
-        .glass-card p { color: #ffffff !important; } /* Memastikan teks paragraf di dalam kartu berwarna putih */
+        /* Memastikan semua paragraf teks biasa di dalam kartu kaca selalu berwarna putih */
+        .glass-card p { color: #ffffff !important; }
         
-        .btn-outline-gold { /* Desain tombol custom dengan outline (garis tepi) emas */
-            border: 1px solid var(--luxury-gold); /* Garis tepi warna emas */
-            color: var(--luxury-gold); /* Warna teks emas */
-            background: transparent; /* Tanpa latar belakang bawaan */
-            border-radius: 50px; /* Membuat bentuk tombol menjadi lonjong (pill-shaped) */
-            padding: 8px 20px; /* Ukuran tombol (atas-bawah, kiri-kanan) */
-            font-weight: 600; /* Teks tombol agak tebal */
-            text-transform: uppercase; /* Huruf kapital semua */
-            transition: all 0.3s ease; /* Transisi untuk semua perubahan properti */
+        /* Mengatur gaya kustom untuk tombol pilihan paket bergaris emas tepi */
+        .btn-outline-gold {
+            border: 1px solid var(--luxury-gold); /* Membuat garis tepi tombol berwarna emas */
+            color: var(--luxury-gold); /* Mengubah warna teks di dalam tombol menjadi emas */
+            background: transparent; /* Membuat latar belakang tombol tembus pandang secara default */
+            border-radius: 50px; /* Membuat bentuk ujung tombol melengkung penuh (oval/kapsul) */
+            padding: 8px 20px; /* Mengatur jarak dalam tombol (8px atas-bawah, 20px kanan-kiri) */
+            font-weight: 600; /* Menebalkan teks tombol agar mudah dibaca */
+            text-transform: uppercase; /* Mengubah teks tombol menjadi huruf kapital */
+            transition: all 0.3s ease; /* Transisi animasi perubahan seluruh warna gaya tombol */
         }
-        /* Efek saat tombol di-hover atau dalam status aktif */
+        /* Efek visual ketika tombol pilihan paket disentuh kursor mouse atau sedang dalam posisi aktif */
         .btn-outline-gold:hover, .btn-outline-gold.active {
-            background: var(--luxury-gold) !important; /* Latar belakang berubah penuh jadi emas */
-            color: #000000 !important; /* Teks berubah menjadi hitam agar kontras */
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Memberikan efek cahaya (glow) emas di sekitar tombol */
+            background: var(--luxury-gold) !important; /* Mengubah warna latar tombol menjadi emas penuh */
+            color: #000000 !important; /* Mengubah warna teks tombol menjadi hitam agar kontras dengan latar emas */
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Memberikan efek cahaya berpendar (glow) berwarna emas di sekitar tombol */
         }
-        .premium-sub-text { color: #cccccc !important; font-size: 0.9rem; } /* Style untuk sub-judul yang lebih redup */
+        /* Mengatur gaya teks tambahan kecil penjelas di bawah sub-judul */
+        .premium-sub-text { color: #cccccc !important; font-size: 0.9rem; }
     </style> <!-- Menutup blok internal CSS -->
-</head>
-<body> <!-- Membuka bagian isi dokumen yang akan dirender oleh browser -->
+</head> <!-- Menutup bagian kepala dokumen HTML -->
+<body> <!-- Membuka bagian utama dokumen tempat seluruh konten visual yang dilihat pengguna diletakkan -->
 
-    <!-- NAVBAR -->
-    <!-- Membuat bar navigasi yang responsif, bertema gelap, kustom premium, dan menempel di atas saat di-scroll (sticky-top) -->
+    <!-- BAGIAN NAVBAR (MENU NAVIGASI UTAMA) -->
+    <!-- Tag nav dengan kelas Bootstrap untuk membuat navigasi responsif, skema gelap, dan sticky tetap di atas layar saat di-scroll -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-premium sticky-top">
-        <div class="container"> <!-- Kontainer pembungkus agar isi navbar sejajar rapi di tengah halaman -->
-            <!-- Logo Brand yang mengarah ke index.html -->
+        <!-- Container untuk membungkus konten menu agar posisinya seimbang di tengah layar komputer -->
+        <div class="container">
+            <!-- Brand logo berupa link teks tebal ukuran besar yang mengarah kembali ke halaman beranda -->
             <a class="navbar-brand fw-bold fs-3 tracking-tight" href="index.html">FITLIFE<span>.PREMIUM</span></a>
-            <!-- Tombol hamburger menu yang muncul ketika dibuka di layar handphone/kecil -->
+            <!-- Tombol hamburger menu yang otomatis muncul di layar HP saat menu navigasi mengecil -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <!-- Icon garis tiga (hamburger icon) bawaan Bootstrap -->
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Kontainer menu navigasi yang bisa menyusut/sembunyi di layar kecil -->
+            <!-- Konten menu navigasi yang bisa menyusut/sembunyi di layar HP dan melebar di layar laptop -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Daftar tautan menu diletakkan di sebelah kanan (ms-auto) dengan jarak antar menu (gap-3) -->
+                <!-- Kumpulan link menu utama yang digeser otomatis ke sebelah kanan layar (ms-auto) dengan jarak antar link (gap-3) -->
                 <div class="navbar-nav ms-auto gap-3">
+                    <!-- Tautan menuju halaman Beranda -->
                     <a class="nav-link" href="index.html">Home</a>
+                    <!-- Tautan menuju halaman Tentang Kami -->
                     <a class="nav-link" href="about.html">Tentang Kami</a>
-                    <!-- Class 'active' menandakan pengguna saat ini sedang berada di halaman ini -->
+                    <!-- Tautan aktif yang menandakan pengguna saat ini sedang berada di halaman Paket & Layanan -->
                     <a class="nav-link active" href="packages.html">Paket & Layanan</a>
+                    <!-- Tautan menuju halaman Formulir Reservasi -->
                     <a class="nav-link" href="reservation.html">Reservasi</a>
+                    <!-- Tautan menuju halaman Kontak & Informasi Tim -->
                     <a class="nav-link" href="contact.html">Kontak & Tim</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+                </div> <!-- Menutup pembungkus kumpulan link -->
+            </div> <!-- Menutup pembungkus efek kolaps menu -->
+        </div> <!-- Menutup container pembungkus navigasi -->
+    </nav> <!-- Menutup tag navigasi -->
 
-    <!-- HEADER -->
-    <!-- Bagian judul halaman dengan teks rata tengah (text-center), padding vertikal (py-5), dan margin vertikal (my-4) -->
+    <!-- BAGIAN HEADER (JUDUL HALAMAN) -->
+    <!-- Div pembungkus teks judul dengan margin atas bawah (my-4) dan padding vertikal besar (py-5) berposisi tengah -->
     <div class="text-center py-5 my-4">
-        <div class="container">
-            <!-- Sub-judul kecil berteks kapital dengan spasi huruf yang lebar -->
+        <div class="container"> <!-- Membungkus judul agar posisinya sejajar rapi di tengah -->
+            <!-- Teks kecil pembuka berhuruf kapital, bercetak tebal, dan berwarna emas premium dengan jarak antar huruf renggang -->
             <span class="text-uppercase fw-bold tracking-widest text-gold" style="font-size: 0.85rem; letter-spacing: 3px;">Investasi Kesehatan</span>
-            <h1 class="fw-bold display-5 mt-2">Membership Eksklusif</h1> <!-- Judul utama berukuran besar (display-5) -->
-        </div>
-    </div>
+            <!-- Judul utama halaman web menggunakan teks tebal (fw-bold) berukuran display besar bawaan Bootstrap -->
+            <h1 class="fw-bold display-5 mt-2">Membership Eksklusif</h1>
+        </div> <!-- Menutup container header -->
+    </div> <!-- Menutup blok pembungkus header -->
 
-    <!-- TABLE DENGAN URL PARAMETER SINKRON -->
-    <div class="container my-5"> <!-- Wadah tabel dengan margin vertikal (my-5) -->
-        <!-- Membungkus tabel agar bisa di-scroll secara horizontal jika layar terlalu kecil (table-responsive) -->
-        <div class="table-responsive shadow rounded-4 overflow-hidden">
-            <table class="table table-premium align-middle mb-0"> <!-- Tabel kustom, teks rata tengah secara vertikal (align-middle) -->
-                <thead> <!-- Bagian Baris Kepala Tabel -->
-                    <tr>
-                        <th scope="col">Nama Paket</th>
-                        <th scope="col">Harga / Bulan</th>
-                        <th scope="col">Akses Alat</th>
-                        <th scope="col">Loker & Shower</th>
-                        <th scope="col">Personal Trainer</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody> <!-- Bagian Baris Isi Data Tabel -->
-                    <tr> <!-- Baris 1: Paket Basic -->
-                        <td class="fw-bold">Basic Fit</td>
-                        <td class="text-gold fw-bold">Rp 150.000</td>
-                        <td>Jam Terbatas (08.00 - 15.00)</td>
-                        <td>Ya</td>
-                        <td>Tidak</td>
-                        <!-- Tombol membawa parameter "?paket=Basic" ke halaman reservasi -->
+    <!-- BAGIAN TABEL DATA DENGAN URL PARAMETER SINKRON -->
+    <div class="container my-5"> <!-- Menggunakan container agar tabel berada di tengah dengan margin atas bawah sejauh level 5 -->
+        <!-- DI SINI SUDAH FIXED: Menghapus overflow-hidden agar fitur scroll horizontal responsif bawaan Bootstrap kembali aktif mulus di HP -->
+        <div class="table-responsive shadow rounded-4">
+            <!-- Tag pembuka tabel dengan class kustom premium dan penyejajaran vertikal data di tengah (align-middle) -->
+            <table class="table table-premium align-middle mb-0">
+                <thead> <!-- Membuka bagian baris judul kolom utama tabel -->
+                    <tr> <!-- Membuka baris pertama header tabel -->
+                        <th scope="col">Nama Paket</th> <!-- Kolom judul untuk Nama Paket -->
+                        <th scope="col">Harga / Bulan</th> <!-- Kolom judul untuk info Harga -->
+                        <th scope="col">Akses Alat</th> <!-- Kolom judul untuk keterangan Hak Akses Fasilitas Alat Gym -->
+                        <th scope="col">Loker & Shower</th> <!-- Kolom judul untuk Fasilitas Sanitasi Kamar Mandi -->
+                        <th scope="col">Personal Trainer</th> <!-- Kolom judul untuk ketersediaan Pelatih Pribadi -->
+                        <th scope="col">Aksi</th> <!-- Kolom judul untuk tombol tindakan pemilihan data -->
+                    </tr> <!-- Menutup baris header tabel -->
+                </thead> <!-- Menutup kepala tabel -->
+                <tbody> <!-- Membuka isi badan data tabel -->
+                    <tr> <!-- Membuka baris paket pertama (Basic Fit) -->
+                        <td class="fw-bold">Basic Fit</td> <!-- Data sel nama paket dicetak tebal -->
+                        <td class="text-gold fw-bold">Rp 150.000</td> <!-- Data sel harga dicetak tebal dengan warna teks emas -->
+                        <td>Jam Terbatas (08.00 - 15.00)</td> <!-- Data sel keterangan jam akses alat -->
+                        <td>Ya</td> <!-- Keterangan loker -->
+                        <td>Tidak</td> <!-- Keterangan personal trainer -->
+                        <!-- Tombol aksi yang mengirimkan parameter data paket '?paket=Basic' lewat URL menuju halaman reservasi -->
                         <td><a href="reservation.html?paket=Basic" class="btn btn-sm btn-outline-gold">Pilih Paket</a></td>
-                    </tr>
-                    <tr> <!-- Baris 2: Paket Pro -->
-                        <td class="fw-bold text-warning">Pro Gym (Populer)</td>
-                        <td class="text-gold fw-bold">Rp 300.000</td>
-                        <td>24/7 Akses Penuh</td>
-                        <td>Ya</td>
-                        <td>2x Sesi / Bulan</td>
-                        <!-- Tombol membawa parameter "?paket=Pro" -->
+                    </tr> <!-- Menutup baris paket pertama -->
+                    <tr> <!-- Membuka baris paket kedua (Pro Gym) -->
+                        <td class="fw-bold text-warning">Pro Gym (Populer)</td> <!-- Nama paket dicetak tebal dengan warna kuning peringatan khas Bootstrap -->
+                        <td class="text-gold fw-bold">Rp 300.000</td> <!-- Informasi harga paket kedua berwarna emas -->
+                        <td>24/7 Akses Penuh</td> <!-- Akses penuh tanpa batas waktu -->
+                        <td>Ya</td> <!-- Keterangan loker -->
+                        <td>2x Sesi / Bulan</td> <!-- Fasilitas gratis pelatih 2 kali sebulan -->
+                        <!-- Tombol aksi mengirimkan parameter data paket '?paket=Pro' lewat URL ke halaman reservasi -->
                         <td><a href="reservation.html?paket=Pro" class="btn btn-sm btn-outline-gold">Pilih Paket</a></td>
-                    </tr>
-                    <tr> <!-- Baris 3: Paket VIP -->
-                        <td class="fw-bold text-info">Ultimate VIP</td>
-                        <td class="text-gold fw-bold">Rp 600.000</td>
-                        <td>24/7 Akses Penuh + Handuk</td>
-                        <td>Ya (VVIP Room)</td>
-                        <td>Setiap Latihan (Unlimited)</td>
-                        <!-- Tombol membawa parameter "?paket=VIP" -->
+                    </tr> <!-- Menutup baris paket kedua -->
+                    <tr> <!-- Membuka baris paket ketiga (Ultimate VIP) -->
+                        <td class="fw-bold text-info">Ultimate VIP</td> <!-- Nama paket dicetak tebal dengan warna biru info khas Bootstrap -->
+                        <td class="text-gold fw-bold">Rp 600.000</td> <!-- Informasi harga paket tertinggi berwarna emas -->
+                        <td>24/7 Akses Penuh + Handuk</td> <!-- Fasilitas istimewa akses penuh ditambah peminjaman handuk gratis -->
+                        <td>Ya (VVIP Room)</td> <!-- Ruang ganti khusus kelas VIP -->
+                        <td>Setiap Latihan (Unlimited)</td> <!-- Pendampingan pelatih setiap kali berlatih tanpa batas -->
+                        <!-- Tombol aksi mengirimkan parameter data paket '?paket=VIP' lewat URL ke halaman reservasi -->
                         <td><a href="reservation.html?paket=VIP" class="btn btn-sm btn-outline-gold">Pilih Paket</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+                    </tr> <!-- Menutup baris paket ketiga -->
+                </tbody> <!-- Menutup seluruh isi badan data tabel -->
+            </table> <!-- Menutup komponen tabel -->
+        </div> <!-- Menutup div pembungkus responsif tabel -->
+    </div> <!-- Menutup container tabel -->
 
-    <!-- JAVASCRIPT FILTER KELAS -->
-    <section class="container my-5 py-4"> <!-- Bagian section jadwal kelas -->
-        <h2 class="text-center mb-2 fw-bold fs-3">Jadwal Kelas Ekstra</h2>
-        <p class="text-center premium-sub-text small mb-4">Saring jenis kelas pelatihan private pilihan Anda.</p>
+    <!-- BAGIAN KONTEN FILTER INTERAKTIF JADWAL KELAS (JAVASCRIPT FILTER) -->
+    <section class="container my-5 py-4"> <!-- Bagian section jadwal kelas dengan pembungkus kontainer spasial -->
+        <h2 class="text-center mb-2 fw-bold fs-3">Jadwal Kelas Ekstra</h2> <!-- Judul sub-konten posisi tengah, tebal, ukuran font tingkat 3 -->
+        <p class="text-center premium-sub-text small mb-4">Saring jenis kelas pelatihan private pilihan Anda.</p> <!-- Paragraf sub-judul kecil warna abu-abu penjelas filter -->
         
-        <!-- Grup tombol filter dengan flexbox rata tengah, memiliki gap, dan bisa membungkus ke bawah jika layar sempit (flex-wrap) -->
+        <!-- Baris tombol penyaring (filter) berposisi tengah layar yang membungkus kumpulan tombol kategori kelas pelatihan -->
         <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
-            <!-- Event onclick memanggil fungsi JavaScript filterKelas() dengan argumen kategori kelas dan keyword 'this' (merujuk ke tombol itu sendiri) -->
+            <!-- Tombol filter 'Semua Kelas' yang memanggil fungsi JavaScript filterKelas dengan argumen string 'semua' saat diklik -->
             <button class="btn btn-outline-gold btn-filter" onclick="filterKelas('semua', this)">Semua Kelas</button>
+            <!-- Tombol filter kelas olahraga berbasis ketahanan jantung (Cardio) -->
             <button class="btn btn-outline-gold btn-filter" onclick="filterKelas('cardio', this)">Cardio</button>
+            <!-- Tombol filter kelas olahraga beban fisik pembentukan otot (Strength) -->
             <button class="btn btn-outline-gold btn-filter" onclick="filterKelas('strength', this)">Strength</button>
-        </div>
+        </div> <!-- Menutup baris kumpulan tombol filter -->
 
-        <!-- Grid sistem Bootstrap (row) untuk menampilkan daftar kartu kelas olahraga -->
-        <div class="row g-4" id="daftarKelas"> <!-- g-4 mengatur ukuran celah/selisih antar kartu grid -->
-            
-            <!-- Kartu Kelas 1 (Kategori: Cardio) -->
-            <div class="col-md-4 item-kelas cardio"> <!-- Memakan 4 dari 12 kolom grid pada layar sedang ke atas (3 kolom per baris) -->
-                <div class="glass-card" style="border-left: 4px solid var(--luxury-gold) !important;"> <!-- Aksen garis kiri emas -->
-                    <h5 class="fw-bold text-white">Zumba & Aerobic</h5>
-                    <p class="small mb-0 mt-2">Kategori: Cardio<br>Jadwal: Senin & Rabu (19.00)</p>
+        <!-- Baris penampung grid kolom (row) untuk menampilkan deretan kartu jadwal kelas gym -->
+        <div class="row g-4" id="daftarKelas">
+            <!-- Kolom Grid Berukuran 4 dari total nilai skala 12 Bootstrap (muat 3 kartu sejajar dalam satu baris monitor) -->
+            <!-- Kartu ini memiliki dua class penanda utama data: 'item-kelas' dan kategori 'cardio' -->
+            <div class="col-md-4 item-kelas cardio">
+                <div class="glass-card" style="border-left: 4px solid var(--luxury-gold) !important;"> <!-- Kartu bergaya kaca transparan dengan hiasan garis pinggir kiri berwarna emas -->
+                    <h5 class="fw-bold text-white">Zumba & Aerobic</h5> <!-- Judul nama kelas -->
+                    <p class="small mb-0 mt-2">Kategori: Cardio<br>Jadwal: Senin & Rabu (19.00)</p> <!-- Detail info kategori dan jadwal hari pelaksanaan -->
                 </div>
-            </div>
+            </div> 
+            <!-- Menutup kolom kartu zumba -->
             
-            <!-- Kartu Kelas 2 (Kategori: Strength) -->
+            <!-- Kolom grid kartu kedua bermuatan kelas tipe kekuatan fisik dengan penanda kategori class 'strength' -->
             <div class="col-md-4 item-kelas strength">
-                <div class="glass-card" style="border-left: 4px solid #ff4444 !important;"> <!-- Aksen garis kiri merah -->
-                    <h5 class="fw-bold text-white">Powerlifting Private</h5>
-                    <p class="small mb-0 mt-2">Kategori: Strength<br>Jadwal: Selasa & Kamis (16.00)</p>
+                <div class="glass-card" style="border-left: 4px solid #ff4444 !important;"> <!-- Kartu berlapis kaca dengan garis dekorasi tepi kiri berwarna merah menyala khusus kekuatan -->
+                    <h5 class="fw-bold text-white">Powerlifting Private</h5> <!-- Judul kelas kekuatan angkat beban berat -->
+                    <p class="small mb-0 mt-2">Kategori: Strength<br>Jadwal: Selasa & Kamis (16.00)</p> <!-- Keterangan info pelaksanaan -->
                 </div>
-            </div>
+            </div> <!-- Menutup kolom kartu powerlifting -->
             
-            <!-- Kartu Kelas 3 (Kategori: Cardio) -->
+            <!-- Kolom grid kartu ketiga bermuatan olahraga beladiri pembakar lemak jantung dengan class 'cardio' -->
             <div class="col-md-4 item-kelas cardio">
                 <div class="glass-card" style="border-left: 4px solid var(--luxury-gold) !important;">
                     <h5 class="fw-bold text-white">Muay Thai Elit</h5>
                     <p class="small mb-0 mt-2">Kategori: Cardio<br>Jadwal: Selasa & Jumat (19.30)</p>
                 </div>
-            </div>
+            </div> <!-- Menutup kolom kartu muay thai -->
             
-            <!-- Kartu Kelas 4 (Kategori: Strength) -->
+            <!-- Kolom grid kartu keempat bermuatan kelas sirkuit latihan fisik intensitas tinggi berkategori 'strength' -->
             <div class="col-md-4 item-kelas strength">
                 <div class="glass-card" style="border-left: 4px solid #ff4444 !important;">
                     <h5 class="fw-bold text-white">Crossfit Intense</h5>
                     <p class="small mb-0 mt-2">Kategori: Strength<br>Jadwal: Rabu & Sabtu (08.00)</p>
                 </div>
-            </div>
+            </div> <!-- Menutup kolom kartu crossfit -->
             
-            <!-- Kartu Kelas 5 (Kategori: Cardio) -->
+            <!-- Kolom grid kartu kelima bermuatan olahraga tinju privat lincah berkategori 'cardio' -->
             <div class="col-md-4 item-kelas cardio">
                 <div class="glass-card" style="border-left: 4px solid var(--luxury-gold) !important;">
                     <h5 class="fw-bold text-white">Exclusive Boxing</h5>
                     <p class="small mb-0 mt-2">Kategori: Cardio<br>Jadwal: Kamis & Sabtu (17.00)</p>
                 </div>
-            </div>
+            </div> <!-- Menutup kolom kartu boxing -->
             
-            <!-- Kartu Kelas 6 (Kategori: Strength) -->
+            <!-- Kolom grid kartu keenam bermuatan olahraga beban menggunakan berat tubuh sendiri berkategori 'strength' -->
             <div class="col-md-4 item-kelas strength">
                 <div class="glass-card" style="border-left: 4px solid #ff4444 !important;">
                     <h5 class="fw-bold text-white">Calisthenics Master</h5>
                     <p class="small mb-0 mt-2">Kategori: Strength<br>Jadwal: Senin & Jumat (15.00)</p>
                 </div>
-            </div>
-            
-        </div>
-    </section>
+            </div> <!-- Menutup kolom kartu calisthenics -->
+        </div> <!-- Menutup baris besar penampung seluruh kartu kelas -->
+    </section> <!-- Menutup bagian penampung konten kelas -->
 
-    <!-- FOOTER -->
-    <!-- Bagian kaki halaman dengan background hitam solid dan garis pembatas atas tipis -->
+    <!-- BAGIAN KAKI HALAMAN (FOOTER KREDIT) -->
+    <!-- Tag footer kustom dengan jarak padding vertikal (py-5) berlatar belakang hitam pekat (#000) -->
     <footer class="py-5 mt-5" style="border-top: 1px solid var(--glass-border); background: #000;">
-        <div class="container text-center">
-            <!-- Teks hak cipta statis dengan keterangan tugas akhir Universitas Amikom Yogyakarta -->
+        <div class="container text-center"> <!-- Wadah teks agar posisi tepat seimbang di tengah kaki web -->
+            <!-- Teks kecil penjelas hak cipta dan tanda kepemilikan pembuat tugas akhir final project mata kuliah Amikom -->
             <p class="small mb-0" style="color: #aaaaaa !important;">&copy; 2026 FITLIFE.PREMIUM. Crafted for SI071 Final Project, Universitas Amikom Yogyakarta.</p>
-        </div>
-    </footer>
+        </div> <!-- Menutup container footer -->
+    </footer> <!-- Menutup komponen kaki halaman -->
 
-    <!-- Bootstrap JS Bundle -->
-    <!-- Menghubungkan library JavaScript Bootstrap (termasuk Popper.js) untuk fitur interaktif seperti dropdown/hamburger menu -->
+    <!-- Memanggil script logika interaktif JavaScript bundle bawaan Bootstrap 5 agar animasi menu drop-down di HP bisa berfungsi -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JavaScript untuk logika interaktivitas filter -->
+    <!-- Membuka tag skrip logika pemrograman internal kustom Javascript Vanilla -->
     <script>
-        // Fungsi untuk menyaring tampilan kartu kelas berdasarkan kategori yang dipilih
+        // Mendefinisikan fungsi bernama filterKelas yang menerima parameter nama kategori ('semua'/'cardio'/'strength') beserta referensi elemen tombol yang diklik (btn)
         function filterKelas(kategori, btn) {
-            // 1. Menghapus class 'active' dari semua tombol filter agar style tombolnya kembali normal
+            // Mengambil seluruh elemen tombol yang memiliki class '.btn-filter' kemudian melakukan perulangan untuk mencopot status kelas efek aktif warna emas ('active') pada tombol lama
             document.querySelectorAll('.btn-filter').forEach(function(b) { b.classList.remove('active'); });
-            
-            // 2. Menambahkan class 'active' hanya pada tombol yang baru saja diklik oleh user
+            // Menambahkan status kelas efek aktif menyala ('active') hanya pada tombol baru yang sedang diklik oleh pengguna saat ini
             btn.classList.add('active');
             
-            // 3. Mengambil semua elemen kartu kelas yang memiliki class '.item-kelas'
+            // DI SINI SUDAH FIXED: Mengambil seluruh daftar elemen kartu jadwal kelas (.item-kelas) ke dalam variabel konstan 'semuaKelas' tanpa typo huruf 's'
             const semuaKelas = document.querySelectorAll('.item-kelas');
             
-            // 4. Melakukan perulangan (looping) untuk mengecek dan menyembunyikan/menampilkan kartu
+            // Melakukan perulangan looping (forEach) untuk memeriksa kecocokan data masing-masing elemen kartu satu per satu
             semuaKelas.forEach(function(kelas) {
+                // Percabangan logika kondisional: Jika parameter kategori bernilai 'semua' (tombol semua kelas diklik)
                 if (kategori === 'semua') { 
-                    // Jika tombol 'Semua Kelas' diklik, tampilkan seluruh kartu kelas
-                    kelas.style.display = 'block'; 
+                    kelas.style.display = 'block'; // Maka instruksikan CSS gaya display elemen kartu diubah menjadi 'block' agar tampil di layar
                 } 
+                // Jika tombol kategori tertentu yang diklik (seperti cardio saja atau strength saja)
                 else { 
-                    // Jika kategori spesifik dipilih, cek apakah kartu memiliki class kategori tersebut (cardio/strength)
-                    // Jika benar, set display 'block' (tampil). Jika salah, set display 'none' (sembunyikan).
+                    /* Menggunakan operator ternary (singkatan if-else): Memeriksa apakah kartu tersebut mengandung nama class kategori yang dipilih atau tidak. 
+                       Jika mengandung class kecocokan kategori tersebut, maka tampilkan ('block'). Jika tidak cocok, sembunyikan kartu dengan mematikan tampilan CSS menjadi hilang ('none') */
                     kelas.style.display = kelas.classList.contains(kategori) ? 'block' : 'none'; 
                 }
-            });
-        }
-    </script>
-</body>
-</html>
+            }); // Menutup proses perulangan pemeriksaan kartu
+        } // Menutup fungsi filterKelas
+    </script> <!-- Menutup blok penulisan JavaScript internal -->
+</body> <!-- Menutup tag utama badan web -->
+</html> <!-- Menutup seluruh dokumen kode HTML -->
